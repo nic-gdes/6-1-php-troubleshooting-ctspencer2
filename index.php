@@ -1,8 +1,8 @@
 <h3>Question 1</h3>
 <?php
   // Question 1
-  echo "Hello, World <br />"
-  echo "Hello back";
+  echo "Hello, World <br />";
+  echo "Hello back"; // The semicolon was missing after the first echo statement.
 ?>
 
 <hr />
@@ -11,7 +11,7 @@
 <?php
   // Question 2
   $greeting = "Good morning";
-  echo $Greeting;
+  echo $greeting; // Variable names are case-sensitive. Use $greeting instead of $Greeting.
 ?>
 
 <hr />
@@ -21,7 +21,7 @@
   // Question 3
   $firstName = "John";
   $lastName = "Doe";
-  echo "Name: " + $firstName + " " + $lastName;
+  echo "Name: " . $firstName . " " . $lastName; // Use the concatenation operator '.' instead of '+'
 ?>
 
 <hr />
@@ -29,8 +29,8 @@
 
 <?php
   // Question 4
-  $colors = array("Red", "Green", "Blue";
-  echo $colors[1];
+  $colors = array("Red", "Green", "Blue");
+  echo $colors[1]; // Missing closing parenthesis for the array declaration.
 ?>
 
 <hr />
@@ -38,7 +38,7 @@
 
 <?php
   // Question 5
-  function greet($name) {
+  function greet($name = "Guest") { // Provide a default value for $name or ensure a value is passed to greet()
     echo "Hello, " . $name;
   }
   greet();
@@ -50,7 +50,7 @@
 <?php
   // Question 6: Be careful, this will not result in a loud error, it's just going to be wrong. Read the code to figure out what it SHOULD do, and make sure it does that.
   $age = 20;
-  if ($age = 18) {
+  if ($age == 18) { // Use '==' for comparison instead of '='
       echo "You are 18 years old.";
   } else {
     echo "You are not 18 years old.";
@@ -63,7 +63,7 @@
 <?php
   // Question 7
   $count = 0;
-  echo 'Count: ' + ++$count;
+  echo 'Count: ' . ++$count; // Use '.' for concatenation, not '+'
 ?>
 
 <hr />
@@ -72,7 +72,7 @@
 <?php
   // Question 8
   define("GREETING", "Hello, everyone.");
-  echo GREETINGS;
+  echo GREETING; // The constant name should match the defined one.
 ?>
 
 <hr />
@@ -80,8 +80,12 @@
 
 <?php
   // Question 9: this test will also not generate an error, but there is something wrong with it.
-  function sayHello() {
-    echo "Hello!";
+  function sayHello($name = "") { // Define the function to optionally accept a parameter
+    if ($name) {
+      echo "Hello, $name!";
+    } else {
+      echo "Hello!";
+    }
   }
   sayHello("John");
 ?>
@@ -92,5 +96,5 @@
 <?php
   // Question 10
   $user = array("name" => "John Doe", "age" => 30);
-  echo $user[name];
+  echo $user['name']; // Use quotes for array keys.
 ?>
